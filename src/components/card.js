@@ -45,6 +45,7 @@ const Card = (article) => {
   cardDiv.addEventListener('click', function (event) {
     console.log(event.target.headlineDiv.textContent)
   })
+  return cardDiv
 }
 
 
@@ -61,12 +62,16 @@ const cardAppender = (selector) => {
   axios
     .get('https://lambda-times-api.herokuapp.com/articles')
     .then((res) => {
-      const articleList = res.data
-      const finishedProduct = articleList.forEach( (item) =>
-        Card(item);
-        document.querySelector(`${selector}`).appendChild(finishedProduct)
-      )
-    });
+      const articleList = res.data.articles.${selector}
+      console.log(articleList)
+      const finishedProduct = articleList.forEach( (item) => {
+        const addingTheCard = Card(item)
+        document.querySelector(`${selector}`).appendChild(addingTheCard)
+    
+      })
+      
+      
+    })
     .catch((error) => {
       console.log(error)
     })

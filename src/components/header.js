@@ -41,9 +41,8 @@ const Header = (title, date, temp) => {
   //
 
 const headerAppender = (selector) => {
-  const createHeader = document.createElement('header');
-  createHeader.appendChild(Header);
-  document.body.prepend(createHeader);
+  document.querySelector(`${selector}`).appendChild(Header('Weather', '4/8/20', '75'))
+
 }
 
 export { Header, headerAppender }
