@@ -41,7 +41,7 @@ const Header = (title, date, temp) => {
   //
 
 const headerAppender = (selector) => {
-  document.querySelector(`${selector}`).appendChild(Header('Weather', '4/8/20', '75'))
+  document.querySelector(`${selector}`).appendChild(Header('Daily Planet', '4/9/20', '75°'))
 
 }
 
