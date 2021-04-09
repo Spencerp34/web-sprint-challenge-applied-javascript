@@ -45,7 +45,7 @@ const Card = (article) => {
   authorDiv.appendChild(authorNameSpan)
 
   cardDiv.addEventListener('click', function (event) {
-    console.log(event.target.headlineDiv.textContent)
+    console.log(article.headline)
   })
   return cardDiv
 }
